@@ -27,18 +27,12 @@ function onboarding() {
     if (validateDetails()) {
       const email = userInfo.email;
       try {
-        const { data } = await axios.post(
-          ONBOARD_USER_ROUTE,
-          {
-            email,
-            name,
-            about,
-            image,
-          },
-          {
-            withCredentials: true,
-          }
-        );
+        const { data } = await axios.post(ONBOARD_USER_ROUTE, {
+          email,
+          name,
+          about,
+          image,
+        });
         if (data.status) {
           dispatch({
             type: reducerCases.SET_NEW_USER,

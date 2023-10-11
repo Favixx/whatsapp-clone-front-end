@@ -41,15 +41,9 @@ function Main() {
   onAuthStateChanged(firebaseAuth, async (currentUser) => {
     if (!currentUser) setRedirectLogin(true);
     if (!userInfo && currentUser?.email) {
-      const { data } = await axios.post(
-        CHECK_USER_ROUTE,
-        {
-          email: currentUser.email,
-        },
-        {
-          withCredentials: true,
-        }
-      );
+      const { data } = await axios.post(CHECK_USER_ROUTE, {
+        email: currentUser.email,
+      });
       if (!data.status) router.push("/login");
       if (data?.data) {
         const {
@@ -135,8 +129,7 @@ function Main() {
       const {
         data: { messages },
       } = await axios.get(
-        `${GET_MESSAGES_ROUTE}/${userInfo?.id}/${currentChatUser?.id}`,
-        { withCredentials: true }
+        `${GET_MESSAGES_ROUTE}/${userInfo?.id}/${currentChatUser?.id}`
       );
       dispatch({ type: reducerCases.SET_MESSAGES, messages });
     };
