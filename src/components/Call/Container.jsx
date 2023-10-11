@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { MdOutlineCallEnd } from "react-icons/md";
 import Image from "next/image";
 import { reducerCases } from "@/context/constants";
-import axios from "../utils/axiosDefaults";
+import axios from "@/utils/axiosDefaults";
 import { GET_CALL_TOKEN } from "@/utils/ApiRoutes";
 import dotenv from "dotenv";
 

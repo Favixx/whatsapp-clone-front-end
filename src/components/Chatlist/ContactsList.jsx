@@ -3,7 +3,7 @@ import { reducerCases } from "@/context/constants";
 import { GET_ALL_CONTACTS } from "@/utils/ApiRoutes";
 import React, { useEffect, useState } from "react";
 import { BiArrowBack, BiSearchAlt2 } from "react-icons/bi";
-import axios from "../utils/axiosDefaults";
+import axios from "@/utils/axiosDefaults";
 import ChatLIstItem from "./ChatLIstItem";
 
 function ContactsList() {

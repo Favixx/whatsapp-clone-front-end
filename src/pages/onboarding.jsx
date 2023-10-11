@@ -5,7 +5,7 @@ import { useStateProvider } from "@/context/StateContext";
 import Avatar from "@/components/common/Avatar";
 import { ONBOARD_USER_ROUTE } from "@/utils/ApiRoutes";
 import { useRouter } from "next/router";
-import axios from "../utils/axiosDefaults";
+import axios from "@/utils/axiosDefaults";
 import { reducerCases } from "@/context/constants";
 
 function onboarding() {

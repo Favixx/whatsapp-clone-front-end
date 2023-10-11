@@ -4,7 +4,7 @@ import ChatList from "./Chatlist/ChatList";
 import { onAuthStateChanged } from "firebase/auth";
 import { firebaseAuth } from "@/utils/FirebaseConfig";
 import { CHECK_USER_ROUTE, GET_MESSAGES_ROUTE, HOST } from "@/utils/ApiRoutes";
-import axios from "../utils/axiosDefaults";
+import axios from "@/utils/axiosDefaults";
 import { useRouter } from "next/router";
 import { useStateProvider } from "@/context/StateContext";
 import { reducerCases } from "@/context/constants";

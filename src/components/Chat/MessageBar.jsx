@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import axios from "../utils/axiosDefaults";
+import axios from "@/utils/axiosDefaults";
 import { BsEmojiSmile } from "react-icons/bs";
 import { ImAttachment } from "react-icons/im";
 import { MdSend } from "react-icons/md";
