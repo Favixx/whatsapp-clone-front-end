@@ -5,6 +5,9 @@ import Image from "next/image";
 import { reducerCases } from "@/context/constants";
 import axios from "axios";
 import { GET_CALL_TOKEN } from "@/utils/ApiRoutes";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 function Container({ data }) {
   const [{ socket, userInfo }, dispatch] = useStateProvider();
