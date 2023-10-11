@@ -1,4 +1,4 @@
-export const HOST = "https://whatsapp-clone-back-end-production.up.railway.app";
+export const HOST = "https://whatsapp-clone-backend-ofh9.onrender.com";
 
 const AUTH_ROUTE = `${HOST}/api/auth`;
 const MESSAGES_ROUTE = `${HOST}/api/messages`;
