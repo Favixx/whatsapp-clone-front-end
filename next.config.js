@@ -1,10 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
-  env: {
-  },
+  env: {},
   images: {
-    domains: ["localhost"],
+    domains: [
+      "localhost",
+      "whatsapp-clone-front-end-zeta.vercel.app",
+      "whatsapp-clone-back-end-production.up.railway.app",
+    ],
   },
 };
 
