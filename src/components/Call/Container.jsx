@@ -7,16 +7,17 @@ import axios from "axios";
 import { GET_CALL_TOKEN } from "@/utils/ApiRoutes";
 import dotenv from "dotenv";
 
-dotenv.config();
-
 function Container({ data }) {
+  dotenv.config();
+  const zegoAppId = process.env.NEXT_PUBLIC_ZEGO_APP_ID;
+  const zegoServerId = process.env.NEXT_PUBLIC_ZEGO_SERVER_ID;
   const [{ socket, userInfo }, dispatch] = useStateProvider();
   const [callAccepted, setCallAccepted] = useState(false);
   const [token, setToken] = useState(undefined);
   const [zgVar, setZgVar] = useState(undefined);
   const [localStream, setLocalStream] = useState(undefined);
   const [publishStream, setPublishStream] = useState(undefined);
-
+  console.log(zegoAppId, zegoServerId);
   useEffect(() => {
     if (data.type === "out-going")
       socket.current.on("accept-call", () => setCallAccepted(true));
@@ -45,10 +46,7 @@ function Container({ data }) {
     const startCall = async () => {
       import("zego-express-engine-webrtc").then(
         async ({ ZegoExpressEngine }) => {
-          const zego = new ZegoExpressEngine(
-            process.env.NEXT_PUBLIC_ZEGO_APP_ID,
-            process.env.NEXT_PUBLIC_ZEGO_SERVER_ID
-          );
+          const zego = new ZegoExpressEngine(zegoAppId, zegoServerId);
           setZgVar(zego);
           zego.on(
             "roomStreamUpdate",
