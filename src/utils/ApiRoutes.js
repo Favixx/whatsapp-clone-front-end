@@ -1,4 +1,4 @@
-export const HOST = "http://localhost:3005";
+export const HOST = "https://whatsapp-clone-backend-l9a3.onrender.com";
 
 const AUTH_ROUTE = `${HOST}/api/auth`;
 const MESSAGES_ROUTE = `${HOST}/api/messages`;
