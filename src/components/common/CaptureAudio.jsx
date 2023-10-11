@@ -10,7 +10,7 @@ import {
 } from "react-icons/fa";
 import { MdSend } from "react-icons/md";
 import WaveSurfer from "wavesurfer.js";
-import axios from "axios";
+import axios from "../utils/axiosDefaults";
 import { reducerCases } from "@/context/constants";
 
 function CaptureAudio({ hide }) {

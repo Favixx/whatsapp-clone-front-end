@@ -1,7 +1,7 @@
 import { useStateProvider } from "@/context/StateContext";
 import { reducerCases } from "@/context/constants";
 import { GET_INITIAL_CONTACTS_ROUTE } from "@/utils/ApiRoutes";
-import axios from "axios";
+import axios from "../utils/axiosDefaults";
 import React, { useEffect } from "react";
 import ChatLIstItem from "./ChatLIstItem";
 
