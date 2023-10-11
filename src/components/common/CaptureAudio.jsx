@@ -166,7 +166,9 @@ function CaptureAudio({ hide }) {
           from: userInfo.id,
           to: currentChatUser.id,
         },
+        withCredentials: true,
       });
+
       if (response.status === 201) {
         setIsRecording(false);
         setRecordedAudio(null);

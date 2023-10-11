@@ -43,7 +43,8 @@ function MessageBar() {
       const file = e.target.files[0];
       const formData = new FormData();
       formData.append("image", file);
-      const response = await axios.post(ADD_IMAGE_MESSAGE_ROUTE, formData, {
+
+      await axios.post(ADD_IMAGE_MESSAGE_ROUTE, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -51,7 +52,9 @@ function MessageBar() {
           from: userInfo.id,
           to: currentChatUser.id,
         },
+        withCredentials: true,
       });
+
       if (response.status === 201) {
         socket.current.emit("send-msg", {
           to: currentChatUser?.id,
@@ -94,11 +97,17 @@ function MessageBar() {
   const sendMessage = async () => {
     try {
       if (message) {
-        const { data } = await axios.post(ADD_MESSAGE_ROUTE, {
-          to: currentChatUser?.id,
-          from: userInfo?.id,
-          message,
-        });
+        const { data } = await axios.post(
+          ADD_MESSAGE_ROUTE,
+          {
+            to: currentChatUser?.id,
+            from: userInfo?.id,
+            message,
+          },
+          {
+            withCredentials: true,
+          }
+        );
         socket.current.emit("send-msg", {
           to: currentChatUser?.id,
           from: userInfo?.id,

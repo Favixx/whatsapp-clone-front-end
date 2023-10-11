@@ -27,7 +27,13 @@ function login() {
     } = await signInWithPopup(firebaseAuth, provider);
     try {
       if (email) {
-        const { data } = await axios.post(CHECK_USER_ROUTE, { email });
+        const { data } = await axios.post(
+          CHECK_USER_ROUTE,
+          { email },
+          {
+            withCredentials: true,
+          }
+        );
         console.log({ data });
         if (!data.status) {
           dispatch({

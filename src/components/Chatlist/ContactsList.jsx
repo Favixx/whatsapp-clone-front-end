@@ -31,7 +31,9 @@ function ContactsList() {
       try {
         const {
           data: { users },
-        } = await axios.get(GET_ALL_CONTACTS);
+        } = await axios.get(GET_ALL_CONTACTS, {
+          withCredentials: true,
+        });
         setAllContacts(users);
         setSearchContacts(users);
       } catch (error) {
