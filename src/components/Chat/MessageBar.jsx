@@ -44,7 +44,7 @@ function MessageBar() {
       const formData = new FormData();
       formData.append("image", file);
 
-      await axios.post(ADD_IMAGE_MESSAGE_ROUTE, formData, {
+      const response = await axios.post(ADD_IMAGE_MESSAGE_ROUTE, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
