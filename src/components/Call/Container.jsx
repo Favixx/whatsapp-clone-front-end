@@ -9,7 +9,7 @@ import dotenv from "dotenv";
 
 function Container({ data }) {
   dotenv.config();
-  const zegoAppId = process.env.NEXT_PUBLIC_ZEGO_APP_ID;
+  const zegoAppId = +process.env.NEXT_PUBLIC_ZEGO_APP_ID;
   const zegoServerId = process.env.NEXT_PUBLIC_ZEGO_SERVER_ID;
   const [{ socket, userInfo }, dispatch] = useStateProvider();
   const [callAccepted, setCallAccepted] = useState(false);
